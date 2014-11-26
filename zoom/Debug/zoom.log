@@ -1,0 +1,67 @@
+﻿生成启动时间为 2014/11/23 16:30:22。
+     1>项目“C:\Users\Amvincible\documents\visual studio 2010\Projects\OpenCVV\zoom\zoom.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\zoom.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         E:\Software\VS2010\VC\bin\CL.exe /c /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt zooom.cpp
+         zooom.cpp
+     1>c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.core.dll : warning C4945: “ExtensionAttribute”: 无法从“c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.core.dll”导入符号: 因为“System::Runtime::CompilerServices::ExtensionAttribute”已从另一个程序集“mscorlib”导入
+                 c:\windows\microsoft.net\framework\v4.0.30319\mscorlib.dll : 参见“System::Runtime::CompilerServices::ExtensionAttribute”的声明
+                 使用最先看到的类型；重新排列导入程序集的顺序以使用当前类型
+                 在导入类型“System.Runtime.CompilerServices.ExtensionAttribute”(从程序集“System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089”中导入)时发生此诊断。
+     1>zooom.cpp(17): error C2065: “CvSize”: 未声明的标识符
+     1>zooom.cpp(17): error C2146: 语法错误: 缺少“;”(在标识符“czSize”的前面)
+     1>zooom.cpp(17): error C2065: “czSize”: 未声明的标识符
+     1>zooom.cpp(20): error C2065: “IplImage”: 未声明的标识符
+     1>zooom.cpp(20): error C2065: “pSrcImage”: 未声明的标识符
+     1>zooom.cpp(20): error C2065: “CV_LOAD_IMAGE_UNCHANGED”: 未声明的标识符
+     1>zooom.cpp(20): error C3861: “cvLoadImage”: 找不到标识符
+     1>zooom.cpp(21): error C2065: “IplImage”: 未声明的标识符
+     1>zooom.cpp(21): error C2065: “pDstImage”: 未声明的标识符
+     1>zooom.cpp(24): error C2065: “czSize”: 未声明的标识符
+     1>zooom.cpp(24): error C2228: “.width”的左边必须有类/结构/联合
+                 类型是“'unknown-type'”
+     1>zooom.cpp(24): error C2065: “pSrcImage”: 未声明的标识符
+     1>zooom.cpp(24): error C2227: “->width”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>zooom.cpp(25): error C2065: “czSize”: 未声明的标识符
+     1>zooom.cpp(25): error C2228: “.height”的左边必须有类/结构/联合
+                 类型是“'unknown-type'”
+     1>zooom.cpp(25): error C2065: “pSrcImage”: 未声明的标识符
+     1>zooom.cpp(25): error C2227: “->height”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>zooom.cpp(28): error C2065: “pDstImage”: 未声明的标识符
+     1>zooom.cpp(28): error C2065: “czSize”: 未声明的标识符
+     1>zooom.cpp(28): error C2065: “pSrcImage”: 未声明的标识符
+     1>zooom.cpp(28): error C2227: “->depth”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>zooom.cpp(28): error C2065: “pSrcImage”: 未声明的标识符
+     1>zooom.cpp(28): error C2227: “->nChannels”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>zooom.cpp(28): error C3861: “cvCreateImage”: 找不到标识符
+     1>zooom.cpp(29): error C2065: “pSrcImage”: 未声明的标识符
+     1>zooom.cpp(29): error C2065: “pDstImage”: 未声明的标识符
+     1>zooom.cpp(29): error C2065: “CV_INTER_AREA”: 未声明的标识符
+     1>zooom.cpp(29): error C3861: “cvResize”: 找不到标识符
+     1>zooom.cpp(32): error C2065: “CV_WINDOW_AUTOSIZE”: 未声明的标识符
+     1>zooom.cpp(32): error C3861: “cvNamedWindow”: 找不到标识符
+     1>zooom.cpp(33): error C2065: “CV_WINDOW_AUTOSIZE”: 未声明的标识符
+     1>zooom.cpp(33): error C3861: “cvNamedWindow”: 找不到标识符
+     1>zooom.cpp(36): error C2065: “pSrcImage”: 未声明的标识符
+     1>zooom.cpp(36): error C3861: “cvShowImage”: 找不到标识符
+     1>zooom.cpp(37): error C2065: “pDstImage”: 未声明的标识符
+     1>zooom.cpp(37): error C3861: “cvShowImage”: 找不到标识符
+     1>zooom.cpp(40): error C3861: “cvWaitKey”: 找不到标识符
+     1>zooom.cpp(43): error C2065: “pDstImage”: 未声明的标识符
+     1>zooom.cpp(43): error C3861: “cvSaveImage”: 找不到标识符
+     1>zooom.cpp(45): error C3861: “cvDestroyWindow”: 找不到标识符
+     1>zooom.cpp(46): error C3861: “cvDestroyWindow”: 找不到标识符
+     1>zooom.cpp(47): error C2065: “pSrcImage”: 未声明的标识符
+     1>zooom.cpp(47): error C3861: “cvReleaseImage”: 找不到标识符
+     1>zooom.cpp(48): error C2065: “pDstImage”: 未声明的标识符
+     1>zooom.cpp(48): error C3861: “cvReleaseImage”: 找不到标识符
+     1>已完成生成项目“C:\Users\Amvincible\documents\visual studio 2010\Projects\OpenCVV\zoom\zoom.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.33

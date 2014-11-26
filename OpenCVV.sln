@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenCVV", "OpenCVV\OpenCVV.vcxproj", "{F20926CE-5A32-4A69-84FA-1F8E166FF578}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Alpha", "Alpha\Alpha.vcxproj", "{62BEE887-52E6-4405-BA72-5A3AC2227902}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "op03", "op03\op03.vcxproj", "{AFF3B053-75C4-49FF-81B9-B9D69019E6C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F20926CE-5A32-4A69-84FA-1F8E166FF578}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F20926CE-5A32-4A69-84FA-1F8E166FF578}.Debug|Win32.Build.0 = Debug|Win32
+		{F20926CE-5A32-4A69-84FA-1F8E166FF578}.Release|Win32.ActiveCfg = Release|Win32
+		{F20926CE-5A32-4A69-84FA-1F8E166FF578}.Release|Win32.Build.0 = Release|Win32
+		{62BEE887-52E6-4405-BA72-5A3AC2227902}.Debug|Win32.ActiveCfg = Debug|Win32
+		{62BEE887-52E6-4405-BA72-5A3AC2227902}.Debug|Win32.Build.0 = Debug|Win32
+		{62BEE887-52E6-4405-BA72-5A3AC2227902}.Release|Win32.ActiveCfg = Release|Win32
+		{62BEE887-52E6-4405-BA72-5A3AC2227902}.Release|Win32.Build.0 = Release|Win32
+		{AFF3B053-75C4-49FF-81B9-B9D69019E6C6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AFF3B053-75C4-49FF-81B9-B9D69019E6C6}.Debug|Win32.Build.0 = Debug|Win32
+		{AFF3B053-75C4-49FF-81B9-B9D69019E6C6}.Release|Win32.ActiveCfg = Release|Win32
+		{AFF3B053-75C4-49FF-81B9-B9D69019E6C6}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
