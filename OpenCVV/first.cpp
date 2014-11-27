@@ -6,8 +6,6 @@
 
 
 using namespace cv;
-
-
 int main()
 {
 	// 读入一张图片（游戏原画）
@@ -19,6 +17,7 @@ int main()
 	imshow("pic",img);
 	// 等待6000 ms后窗口自动关闭
 	//printf("%d",(int)img.row);
+	
 	waitKey(60000);
 
 }

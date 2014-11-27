@@ -29,7 +29,7 @@ for(int i = 0; i < mat.rows; ++i) {
 int main( )
 {
 //创建带alpha通道的Mat
-Mat mat(480, 640, CV_8UC4);
+Mat mat(537, 1061, CV_8UC4);
 createAlphaMat(mat);
  
 vector<int>compression_params;

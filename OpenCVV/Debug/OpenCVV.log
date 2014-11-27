@@ -1,5 +1,5 @@
-﻿生成启动时间为 2014/11/26 20:42:15。
-     1>项目“C:\Users\Amvincible\documents\visual studio 2010\Projects\OpenCVV\OpenCVV\OpenCVV.vcxproj”在节点 2 上(build 个目标)。
+﻿生成启动时间为 2014/11/26 23:38:31。
+     1>项目“C:\Users\Amvincible\Documents\GitHub\OpenCV\OpenCVV\OpenCVV.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug\OpenCVV.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
@@ -8,19 +8,19 @@
        ManifestResourceCompile:
          所有输出均为最新。
        Link:
-         E:\Software\VS2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Amvincible\documents\visual studio 2010\Projects\OpenCVV\Debug\OpenCVV.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib opencv_ts300d.lib opencv_world300d.lib opencv_ts300d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\OpenCVV.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Amvincible\documents\visual studio 2010\Projects\OpenCVV\Debug\OpenCVV.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Amvincible\documents\visual studio 2010\Projects\OpenCVV\Debug\OpenCVV.lib" /MACHINE:X86 Debug\OpenCVV.exe.embed.manifest.res
+         E:\Software\VS2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Amvincible\Documents\GitHub\OpenCV\Debug\OpenCVV.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib opencv_ts300d.lib opencv_world300d.lib opencv_ts300d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\OpenCVV.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Amvincible\Documents\GitHub\OpenCV\Debug\OpenCVV.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Amvincible\Documents\GitHub\OpenCV\Debug\OpenCVV.lib" /MACHINE:X86 Debug\OpenCVV.exe.embed.manifest.res
          Debug\first.obj
        Manifest:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\OpenCVV.exe.embed.manifest" /manifest Debug\OpenCVV.exe.intermediate.manifest
          所有输出均为最新。
        LinkEmbedManifest:
          所有输出均为最新。
-         OpenCVV.vcxproj -> C:\Users\Amvincible\documents\visual studio 2010\Projects\OpenCVV\Debug\OpenCVV.exe
+         OpenCVV.vcxproj -> C:\Users\Amvincible\Documents\GitHub\OpenCV\Debug\OpenCVV.exe
        FinalizeBuildStatus:
          正在删除文件“Debug\OpenCVV.unsuccessfulbuild”。
          正在对“Debug\OpenCVV.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“C:\Users\Amvincible\documents\visual studio 2010\Projects\OpenCVV\OpenCVV\OpenCVV.vcxproj”(build 个目标)的操作。
+     1>已完成生成项目“C:\Users\Amvincible\Documents\GitHub\OpenCV\OpenCVV\OpenCVV.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:06.14
+已用时间 00:00:02.15
