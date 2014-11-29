@@ -3,7 +3,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-
+//#include <opencv2\core\types.hpp>
 
 using namespace cv;
 int main()
@@ -17,7 +17,8 @@ int main()
 	imshow("pic",img);
 	// 等待6000 ms后窗口自动关闭
 	//printf("%d",(int)img.row);
-	
+	//IplImage
+	//cvMat 
 	waitKey(60000);
 
 }

@@ -1,61 +1,87 @@
-#include<iostream>
-#include<stdio.h>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-#include <opencv2\opencv.hpp>
-#include <opencv/cv.h> 
-
-using namespace cv;
+//图像的灰度直方图
+//By MoreWindows (http://blog.csdn.net/MoreWindows)
+#include <opencv2/opencv.hpp>
+#include <opencv2/legacy/compat.hpp>
 using namespace std;
-int main(){
-	system("color 5E");
-	Mat image1;
-	Mat image2;
-	vector<Mat> channels;
-	Mat ColorChannel;
-	image1=imread("..\\Splittry\\dota_logo.jpg",0);
-	image2=imread("..\\op03\\girl.jpg");
-//	
-//		namedWindow("split");
-//	imshow("split",image2);
-//	split(image2,channels);
-//	ColorChannel=channels.at(0);
-//	for(int i=0;i<image1.rows;++i){
-//			printf("<%d>",i);
-//		printf("\n");
-//	}
-//		/*addWeighted(imageBlueChannel(Rect(500,250,logoImage.cols,logoImage.rows)),1.0,
-//		logoImage,0.5,0,imageBlueChannel(Rect(500,250,logoImage.cols,logoImage.rows)));
-//*/
-//
-//	addWeighted(ColorChannel(Rect(100,200,image1.cols,image1.rows)),1.0,image1,0.5,0,
-//		ColorChannel(Rect(100,200,image1.cols,image1.rows)));
-//	merge(channels,image2);
-//	namedWindow("split");
-//	imshow("split",image2);
-	    IplImage *img=cvLoadImage("..\\op03\\girl.jpg",1);
-    CvScalar s;
-    for(int i=0;i<img->height;i++){
-        for(int j=0;j<img->width;j++){
-        s=cvGet2D(img,i,j); // get the (i,j) pixel value
-        printf("B=%f, G=%f, R=%f ",s.val[0],s.val[1],s.val[2]);
-        s.val[0]=111;
-        s.val[1]=111;
-        s.val[2]=111;
-        cvSet2D(img,i,j,s);//set the (i,j) pixel value
-        }
-    }
-    cvNamedWindow("Image",1); 
+#pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
+void FillWhite(IplImage *pImage)
+{
+	cvRectangle(pImage, cvPoint(0, 0), cvPoint(pImage->width, pImage->height), CV_RGB(255, 255, 255), CV_FILLED);
+}
+// 创建灰度图像的直方图
+CvHistogram* CreateGrayImageHist(IplImage **ppImage)
+{
+	int nHistSize = 256;
+	float fRange[] = {0, 255};  //灰度级的范围  
+	float *pfRanges[] = {fRange};  
+	CvHistogram *pcvHistogram = cvCreateHist(1, &nHistSize, CV_HIST_ARRAY, pfRanges);
+	cvCalcHist(ppImage, pcvHistogram);
+	return pcvHistogram;
+}
+// 根据直方图创建直方图图像
+IplImage* CreateHisogramImage(int nImageWidth, int nScale, int nImageHeight, CvHistogram *pcvHistogram)
+{
+	IplImage *pHistImage = cvCreateImage(cvSize(nImageWidth * nScale, nImageHeight), IPL_DEPTH_8U, 1);
+	FillWhite(pHistImage);
+
+	//统计直方图中的最大直方块
+	float fMaxHistValue = 0;
+	cvGetMinMaxHistValue(pcvHistogram, NULL, &fMaxHistValue, NULL, NULL);
+
+	//分别将每个直方块的值绘制到图中
+	int i;
+	for(i = 0; i < nImageWidth; i++)
+	{
+		float fHistValue = cvQueryHistValue_1D(pcvHistogram, i); //像素为i的直方块大小
+		int nRealHeight = cvRound((fHistValue / fMaxHistValue) * nImageHeight);  //要绘制的高度
+		cvRectangle(pHistImage,
+			cvPoint(i * nScale, nImageHeight - 1),
+			cvPoint((i + 1) * nScale - 1, nImageHeight - nRealHeight),
+			cvScalar(i, 0, 0, 0), 
+			CV_FILLED
+		); 
+	}
+	return pHistImage;
+}
+int main( int argc, char** argv )
+{	
+	const char *pstrWindowsSrcTitle = "原图(http://blog.csdn.net/MoreWindows)";
+	const char *pstrWindowsGrayTitle = "灰度图(http://blog.csdn.net/MoreWindows)";
+	const char *pstrWindowsHistTitle = "直方图(http://blog.csdn.net/MoreWindows)";
+
+	// 从文件中加载原图
+	IplImage *pSrcImage = cvLoadImage("color.jpg", CV_LOAD_IMAGE_UNCHANGED);
+	IplImage *pGrayImage = cvCreateImage(cvGetSize(pSrcImage), IPL_DEPTH_8U, 1);
+	// 灰度图
+	cvCvtColor(pSrcImage, pGrayImage, CV_BGR2GRAY);
+
+	// 灰度直方图
+	CvHistogram *pcvHistogram = CreateGrayImageHist(&pGrayImage);
+	
+	// 创建直方图图像
+	int nHistImageWidth = 255;
+	int nHistImageHeight = 150;  //直方图图像高度
+	int nScale = 2;            
+	IplImage *pHistImage = CreateHisogramImage(nHistImageWidth, nScale, nHistImageHeight, pcvHistogram);
+
+	// 显示
+	cvNamedWindow(pstrWindowsSrcTitle, CV_WINDOW_AUTOSIZE);
+	cvNamedWindow(pstrWindowsGrayTitle, CV_WINDOW_AUTOSIZE);
+	cvNamedWindow(pstrWindowsHistTitle, CV_WINDOW_AUTOSIZE);
+	cvShowImage(pstrWindowsSrcTitle, pSrcImage);
+	cvShowImage(pstrWindowsGrayTitle, pGrayImage);
+	cvShowImage(pstrWindowsHistTitle, pHistImage);
 
 
+	cvWaitKey(0);
 
-    cvShowImage("Image",img);
-    cvWaitKey(0); //等待按键 
+	cvReleaseHist(&pcvHistogram);
 
-    cvDestroyWindow( "Image" );//销毁窗口
-    cvReleaseImage( &img ); //释放图像 
-
-	waitKey();
-
+	cvDestroyWindow(pstrWindowsSrcTitle);
+	cvDestroyWindow(pstrWindowsGrayTitle);
+	cvDestroyWindow(pstrWindowsHistTitle);
+	cvReleaseImage(&pSrcImage);
+	cvReleaseImage(&pGrayImage);
+	cvReleaseImage(&pHistImage);
+	return 0;
 }

@@ -1,6 +1,6 @@
 #include <opencv2\core\core.hpp>
 #include <opencv2\highgui\highgui.hpp>
-#include<imgproc.hpp>
+//#include<imgproc.hpp>
 #include <iostream>
 using namespace std;
 using namespace cv;
@@ -9,7 +9,7 @@ int g_nContrastValue;
 int g_nbrightValue;
 Mat g_srcImage,g_dstImage;
 int main(){
-	system("color 6E");
+	system("color 5E");
 	//读图
 	g_srcImage=imread("..\\OpenCVV\\pic.jpg");
 	if(!g_srcImage.data){printf("nononono");return false;}
@@ -34,16 +34,17 @@ int main(){
 }
 //改变图像对比度和亮度的回调函数
 static void ContrastAndBright(int ,void*){
-	namedWindow("原始图",1);
+	//namedWindow("原始图",1);
 	//三个寻欢执行运算g_dstImage(i,j)=a*g_srcImage(i,j)+b;
 	for(int y=0;y<g_srcImage.rows;y++){
 		for(int x=0;x<g_srcImage.cols;x++){
-			for(int c=0;c<3;c++){
+			//printf("<%d,%d><",y,x);
+			for(int c=2;c>=0;c--){
 				g_dstImage.at<Vec3b>(y,x)[c]=
 					saturate_cast<uchar>((g_nContrastValue*0.01)*(g_srcImage.at<Vec3b>(y,x)[c])+g_nbrightValue);
-				printf("<%d,%d>-<%d>",y,x,g_srcImage.at<Vec3b>(y,x)[c]);
+				//printf("%d ",g_srcImage.at<Vec3b>(y,x)[c]);
 			}
-			printf("\n");
+			//printf(">\n");
 		}
 	}
 	//显示图像
